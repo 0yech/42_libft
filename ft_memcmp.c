@@ -6,19 +6,19 @@
 /*   By: nrey <nrey@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 00:58:39 by nrey              #+#    #+#             */
-/*   Updated: 2024/10/03 01:06:59 by nrey             ###   ########.fr       */
+/*   Updated: 2024/10/03 18:07:08 by nrey             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
-		if (((unsigned char*)s1)[i] != ((unsigned char*)s2)[i])
-			return ((void*)(s + i));
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return ((void *)(s + i));
 		i++;
 	}
 	return (0);
