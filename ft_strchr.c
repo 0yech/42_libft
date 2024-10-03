@@ -6,14 +6,12 @@
 /*   By: nrey <nrey@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:03:11 by nrey              #+#    #+#             */
-/*   Updated: 2024/10/03 18:13:13 by nrey             ###   ########.fr       */
+/*   Updated: 2024/10/03 20:02:10 by nrey             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	f;
-
 	while (*s)
 	{
 		if (*s == (char)c)
