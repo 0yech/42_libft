@@ -6,7 +6,7 @@
 /*   By: nrey <nrey@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 16:36:47 by nrey              #+#    #+#             */
-/*   Updated: 2024/10/08 17:11:28 by nrey             ###   ########.fr       */
+/*   Updated: 2024/10/09 07:05:20 by nrey             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,25 @@ static char	*wordcpy(const char *s, int start, int end)
 	return (word);
 }
 
+static int	add_word(char **result, const char *word, int *j)
+{
+	result[*j] = (char *)word;
+	if (!result[*j])
+	{
+		while ((*j)-- > 0)
+			free(result[*j]);
+		free(result);
+		return (0);
+	}
+	(*j)++;
+	return (1);
+}
+
 static int	fill_result(char **result, const char *s, char c, int i)
 {
-	int	j;
-	int	start;
+	int		j;
+	int		start;
+	char	*word;
 
 	i = 0;
 	j = 0;
@@ -42,12 +57,11 @@ static int	fill_result(char **result, const char *s, char c, int i)
 		if ((s[i] == c || s[i + 1] == '\0') && start != -1)
 		{
 			if (s[i] == c)
-				result[j] = wordcpy(s, start, i);
+				word = wordcpy(s, start, i);
 			else
-				result[j] = wordcpy(s, start, i + 1);
-			if (!result[j])
+				word = wordcpy(s, start, i + 1);
+			if (!add_word(result, word, &j))
 				return (0);
-			j++;
 			start = -1;
 		}
 		i++;

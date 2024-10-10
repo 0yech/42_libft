@@ -40,7 +40,17 @@ CFILES=ft_atoi.c \
 	   ft_substr.c \
 	   ft_tolower.c \
 	   ft_toupper.c
+BONUS_C=ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c 
 OFILES=$(CFILES:.c=.o)
+BONUS_O=$(BONUS_C:.c=.o)
 
 all: $(NAME)
 
@@ -48,10 +58,12 @@ $(NAME): $(OFILES)
 	$(AR) $(ARFLAGS) $@ $^
 %.o: %.c
 	$(CC) $(CFLAGS) -include $(INCLUDE) -o $@ -c $<
+bonus: $(BONUS_O)
+	$(AR) $(ARFLAGS) $(NAME) $^
 clean:
-	$(RM) $(RMFLAGS) $(OFILES)
+	$(RM) $(RMFLAGS) $(OFILES) $(BONUS_O)
 fclean: clean
 	$(RM) $(RMFLAGS) $(NAME)
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
