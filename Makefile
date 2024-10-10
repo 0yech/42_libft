@@ -58,7 +58,7 @@ $(NAME): $(OFILES)
 	$(AR) $(ARFLAGS) $@ $^
 %.o: %.c
 	$(CC) $(CFLAGS) -include $(INCLUDE) -o $@ -c $<
-bonus: $(BONUS_O)
+bonus: $(OFILES) $(BONUS_O)
 	$(AR) $(ARFLAGS) $(NAME) $^
 clean:
 	$(RM) $(RMFLAGS) $(OFILES) $(BONUS_O)

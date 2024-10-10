@@ -6,9 +6,11 @@
 /*   By: nrey <nrey@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:35:25 by nrey              #+#    #+#             */
-/*   Updated: 2024/10/04 22:31:02 by nrey             ###   ########.fr       */
+/*   Updated: 2024/10/10 20:37:19 by nrey             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
