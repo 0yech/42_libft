@@ -6,7 +6,7 @@
 /*   By: nrey <nrey@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 06:03:26 by nrey              #+#    #+#             */
-/*   Updated: 2024/10/05 18:03:51 by nrey             ###   ########.fr       */
+/*   Updated: 2024/10/13 13:16:30 by nrey             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static size_t	nlen(int n)
 	return (len);
 }
 
-void	appnbr(char *p, int n, int c)
+static void	appnbr(char *p, int n, int c)
 {
 	if (n >= 10)
 	{
